@@ -1,10 +1,12 @@
 {
   "name": "session-based-auth",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.ts"
+    "start:prod": "node ./dist/src/index.js",
+    "start:dev": "nodemon",
+    "build": "tsc",
+    "test": "NODE_ENV=test jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -12,13 +14,17 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
+    "@prisma/client": "^6.5.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "dotenv-safe": "^9.1.0",
     "express": "^4.21.2",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "prisma": "^6.5.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
+    "@types/dotenv-safe": "^8.1.6",
     "@types/express": "^5.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
