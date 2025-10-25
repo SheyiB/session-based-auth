@@ -50,7 +50,7 @@ export const signup = async(req: Request, res: Response): Promise<any> => {
             }
         });
 
-        return res.status(201).json({message: "User created successfully", data: user});
+        return res.status(201).json({status: "success", message: "User created successfully", data: user});
 
     } catch (error) {
         return res.status(500).json({message: "Internal server error"})
